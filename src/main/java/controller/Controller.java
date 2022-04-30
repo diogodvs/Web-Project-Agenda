@@ -1,11 +1,15 @@
 package controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
 import model.DAO;
 import model.JavaBeans;
 
@@ -38,7 +42,25 @@ public class Controller extends HttpServlet {
 	// Listar contatos
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("agenda.jsp");
+		
+		// Criando um objeto que ira receber os dados JavaBeans
+		ArrayList<JavaBeans> lista = dao.listarContatos();
+		
+		// Encaminhar a lista ao documento agenda.jsp
+		request.setAttribute("contatos", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("agenda.jsp");
+		rd.forward(request, response);
+		
+		
+		/** Teste de recebimento da lista
+		
+		for(int i = 0; i < lista.size(); i++ ) {
+			System.out.println(lista.get(i).getIdcon());
+			System.out.println(lista.get(i).getNome());
+			System.out.println(lista.get(i).getFone());
+			System.out.println(lista.get(i).getEmail());
+		} **/
+		
 	}
 
 	// Novo contato
