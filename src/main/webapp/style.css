@@ -64,12 +64,6 @@ img{
 	margin-top: 12%;
 	
 }
-table{
-	display: flex;
-	flex-direction: column;
-	width: 300px;
-
-}
 
 .caixa1{
 	border: #0d2c46 solid 1px;
@@ -94,9 +88,21 @@ table{
 	text-align: center;
 }
 
-#tabela{
+.table thead tr th{
 	
 	margin-top: 30px;
-	
+	border: 2px solid #000000;
+	padding: 10px;
+	text-align: left;
+	background-color: #66bbff;
+	color: #fff;
+	position: absolute;
+}
+
+.table td{
+	border-collapse: collapse;
+	border: 2px solid #ddd;
+	padding: 10px;
+	text-align: left;
 	
 }

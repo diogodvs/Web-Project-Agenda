@@ -35,7 +35,7 @@ public class Controller extends HttpServlet {
 			novoContato(request, response);
 
 		} else {
-			response.sendRedirect("index.html");
+			response.sendRedirect("main");
 		}
 	}
 
@@ -59,7 +59,7 @@ public class Controller extends HttpServlet {
 			System.out.println(lista.get(i).getNome());
 			System.out.println(lista.get(i).getFone());
 			System.out.println(lista.get(i).getEmail());
-		} **/
+		} **/ 
 		
 	}
 
