@@ -90,4 +90,66 @@ public class DAO {
 
 	}
 
+	// CRUD UPDATE
+
+	public void selecionarContato(JavaBeans contato) {
+		String read2 = "select * from contatos where idcon = ?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(read2);
+			pst.setString(1, contato.getIdcon());
+			ResultSet rs = pst.executeQuery();
+
+			while (rs.next()) {
+				// Setar as Variaveis JavaBeans
+				contato.setIdcon(rs.getString(1));
+				contato.setNome(rs.getString(2));
+				contato.setFone(rs.getString(3));
+				contato.setEmail(rs.getString(4));
+			}
+			con.close();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	// editar o contato
+	public void alterarContato(JavaBeans contato) {
+		String create = "update contatos set nome=?, fone=?, email=? where idcon=?";
+
+		try {
+			Connection con = conectar();
+
+			PreparedStatement pst = con.prepareStatement(create);
+			pst.setString(1, contato.getNome());
+			pst.setString(2, contato.getFone());
+			pst.setString(3, contato.getEmail());
+			pst.setString(4, contato.getIdcon());
+
+			pst.executeUpdate();
+
+			con.close();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	// CRUD DELETE
+	
+	public void deletarContato(JavaBeans contato) {
+		String delete = "delete from contatos where idcon=?";
+
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(delete);
+			pst.setString(1, contato.getIdcon());
+			pst.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
 }

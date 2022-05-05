@@ -14,19 +14,21 @@ body {
 	background-image: radial-gradient(circle, white, white, blue);
 }
 
-#agenda{
-	font-family: 'Noto Serif', serif;
-	position: flex;
-	border: #0d2c46 solid 5px;
-	border-radius: 20px;
-	margin-top: 8%;
-	flex-direction: column;
-	padding: 20px 40px;
+.index{
 	width: 350px;
-	height: 450px;
+	height: 400px;
+	position: relative;
+	border: #0d2c46 solid 5px;
+	padding: 20px 40px;
+	border-radius: 20px;
+	margin-top: 30%;
 
 }
 
+.index button{
+	justify-content:center;
+	
+}
 h1{
 	font-family: 'Noto Serif', serif;
 	text-align: center;
@@ -36,22 +38,28 @@ h1{
 	color: #fff;
 }
 
-img{
+.index img{
+	margin-left: 40px;
 	margin-bottom: 18px;
 
 }
+
 .botao1{
 	font-family: 'Noto Serif', serif;
 	text-decoration: none;
 	background-color: #0d2c46;
-	margin-top: 20px;
 	padding: 5px 10px 5px 10px;
 	color: #fff;
 	font-size: 1.2em;
 	font-weight: 700;
 	border-radius: 8px;
 	text-align: center;
-	margin-left: 33%;
+	
+}
+
+.botao1:hover{
+	border-radius: 20px;
+	background-color: #66bbff;
 }
 
 #agendanew{
@@ -77,32 +85,81 @@ img{
 	
 }
 
-.caixa2{
-	border: #0d2c46 solid 1px;
-	border-radius: 8px;
-	margin-left: 2%;
-	text-decoration: none;	
-	margin-bottom: 10px;
+.caixa3{
 	padding: 5px;
-	width: 320px;
+	margin-bottom: 10px;
+	border: #ff0000 solid 1px;
+	margin-left: 2%;
+	border-radius: 8px;
 	text-align: center;
 }
 
-.table thead tr th{
-	
-	margin-top: 30px;
-	border: 2px solid #000000;
+.table{
+	border-radius: 5px;
+	position: static;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+.botaox{
+	font-family: 'Noto Serif', serif;
+	text-decoration: none;
+	background-color: #d51213;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 8px;
+	text-align: center;
+}
+
+table thead tr {
+    border-radius: 5px;
+	border: 2px 2px 2px 2px solid rgb(15, 2, 75);
 	padding: 10px;
-	text-align: left;
+	text-align: center;
 	background-color: #66bbff;
 	color: #fff;
-	position: absolute;
+	
 }
 
 .table td{
-	border-collapse: collapse;
+	
 	border: 2px solid #ddd;
 	padding: 10px;
 	text-align: left;
+
+}
+
+.botoesedt{
+	justify-content: center;
+	gap: 30px;
+	display: flex;
 	
 }
+
+.but, .but:visited{
+	font-family: 'Noto Serif', serif;
+	background-color: rgb(255, 47, 151);
+	margin-top: 10px;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 8px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.but:hover{
+	cursor: pointer;
+	
+}
+
+.botaox:hover{
+	background-color:  #ff2f97;
+	border-radius: 20px;
+	
+}
+
+

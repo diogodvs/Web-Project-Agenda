@@ -12,20 +12,19 @@
 		<h1>Criar Contato</h1>
 		<form name="frmContato" action="insert">
 			<table id="table">
-				<tr>
+				
 					<input type="text" name="nome" placeholder="Nome" class="caixa1">
-				</tr>
-				<tr>
-					<input type="text" name="fone" placeholder="Fone" class="caixa2">
-				</tr>
-				<tr>
+				
+					<input type="text" name="fone" placeholder="Fone" class="caixa1"
+						onkeypress="mask(this, mphone)" onblur="mask(this, mphone)">
+				
 					<input type="text" name="email" placeholder="E-mail" class="caixa1">
-				</tr>
+				
 			</table>
 
-			<div class="bu">
-				<input type="button" value="Adicionar" class="botao1"
-					onclick="validar()">
+			<div class="botoesedt">
+				<button type="submit" onclick="validar()" class="but">Adicionar</button>
+				<a href="main" action="/main" class="but">Cancelar</a>
 			</div>
 		</form>
 		<script src="scripts/validador.js"></script>
